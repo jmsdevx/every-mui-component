@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import ListExample from "./components/List/ListExample";
+import Card from "./components/Card/Card";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
@@ -42,18 +43,11 @@ class App extends Component {
             // justify="space-around"
             alignItems="stretch"
             xs="12"
-            sm="12"
-            md="12"
-            lg="6"
-            xl="6"
+            sm="6"
+            md="6"
+            lg="4"
+            xl="4"
           >
-            <Typography
-              variant="h4"
-              align="center"
-              className={classes.subTitle}
-            >
-              List
-            </Typography>
             <ListExample />
           </Grid>
           <Grid
@@ -62,59 +56,12 @@ class App extends Component {
             // justify="space-around"
             alignItems="stretch"
             xs="12"
-            sm="12"
-            md="12"
-            lg="6"
-            xl="6"
+            sm="6"
+            md="6"
+            lg="4"
+            xl="4"
           >
-            <Typography
-              variant="h4"
-              align="center"
-              className={classes.subTitle}
-            >
-              List
-            </Typography>
-            <ListExample />
-          </Grid>
-          <Grid
-            container
-            direction="column"
-            // justify="space-around"
-            alignItems="stretch"
-            xs="12"
-            sm="12"
-            md="12"
-            lg="6"
-            xl="6"
-          >
-            <Typography
-              variant="h4"
-              align="center"
-              className={classes.subTitle}
-            >
-              List
-            </Typography>
-            <ListExample />
-          </Grid>
-          <Grid
-            container
-            direction="column"
-            // justify="space-around"
-            alignItems="stretch"
-            xs="12"
-            sm="12"
-            md="12"
-            lg="6"
-            xl="6"
-          >
-            <Typography
-              variant="h4"
-              align="center"
-              className={classes.subTitle}
-            >
-              List
-            </Typography>
-            <ListExample />
+            <Card />
           </Grid>
         </Grid>
       </Paper>

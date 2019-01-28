@@ -9,6 +9,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import IconButton from "@material-ui/core/IconButton";
 import Delete from "@material-ui/icons/Delete";
 import { withStyles } from "@material-ui/core/styles";
+import NavBar from "./ListNav";
 
 const styles = theme => ({
   root: {
@@ -70,6 +71,7 @@ class ListExample extends Component {
 
     return (
       <Paper className={classes.root}>
+        <NavBar />
         <form className={classes.form} onSubmit={this.handleCreate}>
           <TextField
             name="title"
