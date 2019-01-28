@@ -1,28 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import ListExample from "./components/List/ListExample";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = {
+  root: {
+    margin: "2vw",
+    padding: "5vw",
+    maxWidth: "100vw"
+  },
+  form: {
+    display: "flex",
+    alignItems: "baseline",
+    justifyContent: "space-evenly"
+  }
+};
 
 class App extends Component {
   render() {
+    const { classes } = this.props;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Paper className={classes.root}>
+        <Typography variant="h2" align="center" gutterBottom>
+          Components
+        </Typography>
+
+        <Typography variant="h4" align="left">
+          List:
+        </Typography>
+        <ListExample />
+      </Paper>
     );
   }
 }
 
-export default App;
+export default withStyles(styles)(App);
