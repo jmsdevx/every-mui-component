@@ -5,18 +5,16 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 
-const styles = {
+const styles = theme => ({
   root: {
-    margin: "2vw",
-    padding: "5vw",
+    margin: 0,
+    padding: `0vw ${theme.spacing.unit}vw`,
     maxWidth: "100vw"
   },
-  form: {
-    display: "flex",
-    alignItems: "baseline",
-    justifyContent: "space-evenly"
+  subTitle: {
+    marginTop: `${theme.spacing.unit * 2}vh`
   }
-};
+});
 
 class App extends Component {
   render() {
@@ -27,8 +25,8 @@ class App extends Component {
           Components
         </Typography>
 
-        <Typography variant="h4" align="left">
-          List:
+        <Typography variant="h4" align="center" className={classes.subTitle}>
+          List
         </Typography>
         <ListExample />
       </Paper>

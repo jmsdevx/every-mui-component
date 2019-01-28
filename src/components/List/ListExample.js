@@ -10,26 +10,30 @@ import IconButton from "@material-ui/core/IconButton";
 import Delete from "@material-ui/icons/Delete";
 import { withStyles } from "@material-ui/core/styles";
 
-const styles = {
+const styles = theme => ({
   root: {
-    margin: "2vw",
-    padding: "5vw",
+    margin: `0vw ${theme.spacing.unit * 1.5}vw`,
+    padding: `${theme.spacing.unit / 3}vw`,
     maxWidth: "100vw"
   },
   form: {
     display: "flex",
     alignItems: "baseline",
     justifyContent: "space-evenly"
+  },
+  listItem: {
+    display: "flex",
+    flexDirection: "column"
   }
-};
+});
 
 class ListExample extends Component {
   state = {
     title: "",
-    exercises: [
-      { id: 1, title: "Bench Press" },
-      { id: 2, title: "Deadlift" },
-      { id: 3, title: "Squats" }
+    groceries: [
+      { id: 1, title: "Milk" },
+      { id: 2, title: "Eggs" },
+      { id: 3, title: "Cheese" }
     ]
   };
 
@@ -42,9 +46,9 @@ class ListExample extends Component {
     e.preventDefault();
 
     return this.state.title
-      ? this.setState(({ exercises, title }) => ({
-          exercises: [
-            ...exercises,
+      ? this.setState(({ groceries, title }) => ({
+          groceries: [
+            ...groceries,
             {
               title,
               id: Date.now()
@@ -56,12 +60,12 @@ class ListExample extends Component {
   };
 
   handleDelete = id =>
-    this.setState(({ exercises }) => ({
-      exercises: exercises.filter(e => e.id !== id)
+    this.setState(({ groceries }) => ({
+      groceries: groceries.filter(e => e.id !== id)
     }));
 
   render() {
-    const { title, exercises } = this.state;
+    const { title, groceries } = this.state;
     const { classes } = this.props;
 
     return (
@@ -69,7 +73,7 @@ class ListExample extends Component {
         <form className={classes.form} onSubmit={this.handleCreate}>
           <TextField
             name="title"
-            label="Exercise"
+            label="Add an item"
             value={title}
             onChange={this.handleChange}
             margin="normal"
@@ -79,8 +83,8 @@ class ListExample extends Component {
           </Button>
         </form>
 
-        <List>
-          {exercises.map(({ id, title }) => {
+        <List className={classes.listItem}>
+          {groceries.map(({ id, title }) => {
             return (
               <ListItem key={id}>
                 <ListItemText primary={title} />
