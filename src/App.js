@@ -4,11 +4,12 @@ import ListExample from "./components/List/ListExample";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 
 const styles = theme => ({
   root: {
     margin: 0,
-    padding: `0vw ${theme.spacing.unit}vw`,
+    // padding: `0vw ${theme.spacing.unit}vw`,
     maxWidth: "100vw"
   },
   subTitle: {
@@ -24,11 +25,98 @@ class App extends Component {
         <Typography variant="h2" align="center" gutterBottom>
           Components
         </Typography>
-
-        <Typography variant="h4" align="center" className={classes.subTitle}>
-          List
-        </Typography>
-        <ListExample />
+        <Grid
+          container
+          direction="row"
+          wrap="wrap"
+          // justify="center"
+          xs="12"
+          sm="12"
+          md="12"
+          lg="12"
+          xl="12"
+        >
+          <Grid
+            container
+            direction="column"
+            // justify="space-around"
+            alignItems="stretch"
+            xs="12"
+            sm="12"
+            md="12"
+            lg="6"
+            xl="6"
+          >
+            <Typography
+              variant="h4"
+              align="center"
+              className={classes.subTitle}
+            >
+              List
+            </Typography>
+            <ListExample />
+          </Grid>
+          <Grid
+            container
+            direction="column"
+            // justify="space-around"
+            alignItems="stretch"
+            xs="12"
+            sm="12"
+            md="12"
+            lg="6"
+            xl="6"
+          >
+            <Typography
+              variant="h4"
+              align="center"
+              className={classes.subTitle}
+            >
+              List
+            </Typography>
+            <ListExample />
+          </Grid>
+          <Grid
+            container
+            direction="column"
+            // justify="space-around"
+            alignItems="stretch"
+            xs="12"
+            sm="12"
+            md="12"
+            lg="6"
+            xl="6"
+          >
+            <Typography
+              variant="h4"
+              align="center"
+              className={classes.subTitle}
+            >
+              List
+            </Typography>
+            <ListExample />
+          </Grid>
+          <Grid
+            container
+            direction="column"
+            // justify="space-around"
+            alignItems="stretch"
+            xs="12"
+            sm="12"
+            md="12"
+            lg="6"
+            xl="6"
+          >
+            <Typography
+              variant="h4"
+              align="center"
+              className={classes.subTitle}
+            >
+              List
+            </Typography>
+            <ListExample />
+          </Grid>
+        </Grid>
       </Paper>
     );
   }

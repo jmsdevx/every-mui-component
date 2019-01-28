@@ -12,9 +12,9 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
   root: {
-    margin: `0vw ${theme.spacing.unit * 1.5}vw`,
+    // margin: `0vw ${theme.spacing.unit * 2.5}vw`,
     padding: `${theme.spacing.unit / 3}vw`,
-    maxWidth: "100vw"
+    maxWidth: "50vw"
   },
   form: {
     display: "flex",
